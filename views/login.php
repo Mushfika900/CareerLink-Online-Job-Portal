@@ -35,7 +35,7 @@
                 <p>
                     Log in to continue to your dashboard.
                 </p>
-                <form id="loginForm">
+                <form method="post" action="../controllers/loginControl.php">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="you@example.com">
                     <span id="emailError"></span><br>
