@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.login-container{
+    width: 1100px;
+    height: 600px;
+    margin: 50px auto;
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.left{
+    width: 65%;
+    background: #145440;
+    padding:50px;
+    color: white;
+    position: relative;
+}
+
+.logo{
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo-circle{
+    width: 10px;
+    height: 10px;
+    border: 2px solid #ead433;
+    border-radius: 50%;
+}
+.left-text{
+    margin-top: 140px;
+}
+.left-text h1{
+    color: white;
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: normal;
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+}
+.left-text p{
+    color: #cccccc;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.dot{
+    position: absolute;
+    left: 50px;
+    bottom: 50px;
+    display: flex;
+    gap: 10px;
+}
+.dot1,.dot2{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: block;
+}
+.dot1{
+    background: #d6b94b;
+}
+.dot2{
+    background: #557c70;
+}
+.right{
+    width: 35%;
+    background: white;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+}
+.login-form{
+    width: 100%;
+    position: relative;
+}
+.login-form h2{
+    font-size: 30px;
+    margin-bottom: 8px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #1f2a24;
+    font-weight: normal;
+}
+.login-form p{
+    font-size: 14px;
+    color:#999;
+    margin-bottom: 30px;
+}
+.login-form form{
+    width: 100%;
+}
+.login-form label{
+    display: block;
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 7px;
+}
+.login-form input{
+    width: 100%;
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    margin-bottom: 18px;
+}
+#emailError,
+#passError{
+    display: block;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.pass{
+    display: inline-block;
+    font-size: 12px;
+    color:#777;
+    margin-bottom: 7px;
+
+}
+.forgot{
+    font-size: 11px;
+    color: #777;
+    text-decoration: none;
+    float: right;margin-top: 2px;
+}
+.btn{
+    width: 100%;
+    height: 42px;
+    background: #145440;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 2px;
+    cursor: pointer;
+    
+}
+.btn:hover{
+background-color: #0f4434;
+
+}
+.create{
+    margin-top: 16px;
+    font-size: 12px;
+    color:#888
+}
+.create a{
+    color:#145440;
+    text-decoration: none;
+    font-weight: bold;
+}
+.show-btn{
+    position: absolute;
+    right: 12px;
+    top: 248px;
+    border: none;
+    background: transparent;
+    color: #145440;
+    font-size: 11px;
+    cursor: pointer;
+}
+.login-form .valid{
+    font-size: 11px;
+    color: #2f7d5b;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.back-login{
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 16px;
+    color: #145440;
+    text-decoration: none;
+} 
+.login-form form .otp-time{
+    font-size: 11px;
+    color:#b28a2e;
+    margin-bottom: 15px;
+}
+.resend-text{
+    margin-top: 15px;
+    font-size: 11px;
+    color: #777;
+}
+.resend-text a{
+    color: #145440;
+    text-decoration: none;
+}
+.pass-box{
+    position: relative;
+}
+.show-pass{
+    position: absolute;
+    right: 10px;
+    top: 18px;
+    border: none;
+    background: none;
+}
+.pass-text{
+    margin-top: 10px;
+    margin-bottom: 14px;
+    font-size: 11px;
+    color: green;
+}
+.back{
+    display: inline-block;
+    margin-top: 12px;
+    text-decoration: none;
+    color: #17644d;
+}
