@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Create Account</title>
+    <title>Password Reset Successful</title>
 
     <link rel="stylesheet" href="../views/css/style.css">
 </head>
@@ -36,5 +36,26 @@
         </div>
 
     </div>
+
+<!-- right side -->
+    <div class="right">
+        <div class="success-content">
+            <div class="success-icon">
+                &#10003;
+            </div>
+            <h2>Password reset successful</h2>
+            <p>
+                You can now log in to CareerLink using your new password.
+            </p>
+            <a href="login.php" class="success">
+                Back to Login
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
 </body>
 </html>

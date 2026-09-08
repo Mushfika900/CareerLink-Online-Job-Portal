@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forgot Password</title>
-    <link rel="stylesheet" href="../views/css/login.css">
+    <link rel="stylesheet" href="../views/css/style.css">
 </head>
 <body>
     <div class="login-container">
@@ -36,12 +36,12 @@
                 <p>
                     Enter the email linked to your account - an OTP will be sent to verify it's you.
                 </p>
-                <form id="forgotForm">
+                <form method="post" action="../controllers/forgotControl.php">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="you@example.com" onkeyup="checkEmail()">
                     <span id="emailError"></span>
           
-                    <button type="submit" class="btn">Send OTP</button>
+                    <button type="submit" class="btn">Send Verification Code</button>
                     <a href="login.php" class="back-login">&larr;Back to Login</a>
                 </form>
             </div>
