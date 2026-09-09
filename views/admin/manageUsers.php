@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <?php require_once 'sidebar.php'; ?>
 
     <main class="main-content">
 
@@ -78,14 +79,11 @@
                     <thead>
 
                         <tr>
-                            <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Phone</th>
                             <th>Role</th>
                             <th>Status</th>
                             <th>Action</th>
-                            <th>Created</th>
                         </tr>
 
                     </thead>
@@ -95,62 +93,79 @@
                         <?php while ($user = mysqli_fetch_assoc($users)) { ?>
 
                             <tr>
-
-                                <td>
-                                    <?php echo $user['user_id']; ?>
-                                </td>
-
+                        
                                 <td>
                                     <?php echo htmlspecialchars($user['name']); ?>
                                 </td>
-
+                        
                                 <td>
                                     <?php echo htmlspecialchars($user['email']); ?>
                                 </td>
-
+                        
                                 <td>
-                                    <?php echo htmlspecialchars($user['phone']); ?>
+                                    <?php
+                                    if ($user['role'] == 'jobseeker') {
+                                        echo "Job Seeker";
+                                    } elseif ($user['role'] == 'employer') {
+                                        echo "Employer";
+                                    } else {
+                                        echo "Admin";
+                                    }
+                                    ?>
                                 </td>
-
+                        
                                 <td>
-                                    <?php echo htmlspecialchars($user['role']); ?>
-                                </td>
-
-                                <td>
-                                    <?php echo htmlspecialchars($user['status']); ?>
-                                </td>
-                                <td>
-
-                                    <a href="/CareerLink-Online-Job-Portal/controllers/adminControls.php?page=userDetails&id=<?php echo $user['user_id']; ?>">
-                                        View Details
-                                    </a><br>
-
                                     <?php if ($user['status'] == 'active') { ?>
-                            
-                                        <a href="/CareerLink-Online-Job-Portal/controllers/adminControls.php?page=users&action=status&id=<?php echo $user['user_id']; ?>&status=inactive">
+                        
+                                        <span class="status-badge active">Active</span>
+                        
+                                    <?php } else { ?>
+                        
+                                        <span class="status-badge inactive">Inactive</span>
+                        
+                                    <?php } ?>
+                                </td>
+                        
+                                <td class="action-buttons">
+                        
+                                    <a
+                                        class="action-button"
+                                        href="/CareerLink-Online-Job-Portal/controllers/adminControls.php?page=userDetails&id=<?php echo $user['user_id']; ?>"
+                                    >
+                                        View Details
+                                    </a>
+                        
+                                    <?php if ($user['status'] == 'active') { ?>
+                        
+                                        <a
+                                            class="action-button"
+                                            href="/CareerLink-Online-Job-Portal/controllers/adminControls.php?page=users&action=status&id=<?php echo $user['user_id']; ?>&status=inactive"
+                                        >
                                             Deactivate
                                         </a>
-                            
+                        
                                     <?php } else { ?>
-                            
-                                        <a href="/CareerLink-Online-Job-Portal/controllers/adminControls.php?page=users&action=status&id=<?php echo $user['user_id']; ?>&status=active">
+                        
+                                        <a
+                                            class="action-button"
+                                            href="/CareerLink-Online-Job-Portal/controllers/adminControls.php?page=users&action=status&id=<?php echo $user['user_id']; ?>&status=active"
+                                        >
                                             Activate
                                         </a>
-                            
+                        
                                     <?php } ?>
-                                    <br>
-                                    <a href="/CareerLink-Online-Job-Portal/controllers/adminControls.php?page=users&action=delete&id=<?php echo $user['user_id']; ?>">
+                        
+                                    <a
+                                        class="delete-button"
+                                        href="/CareerLink-Online-Job-Portal/controllers/adminControls.php?page=users&action=delete&id=<?php echo $user['user_id']; ?>"
+                                    >
                                         Delete
                                     </a>
-                            
+                        
                                 </td>
-
-                                <td>
-                                    <?php echo htmlspecialchars($user['created_at']); ?>
-                                </td>
-
+                        
                             </tr>
-
+                        
                         <?php } ?>
 
                     </tbody>

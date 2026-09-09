@@ -13,24 +13,7 @@
 
 <body>
 
-    <aside class="sidebar">
-
-        <div class="logo">
-            <span class="logo-circle"></span>
-            CareerLink
-        </div>
-
-        <nav class="sidebar-menu">
-
-            <a href="./dashboard.php" class="menu-item active">Dashboard</a>
-            <a href="./manageUsers.php" class="menu-item">Manage Users</a>
-            <a href="./manageJobs.php" class="menu-item">Manage Jobs</a>
-            <a href="./statistics.php" class="menu-item">Statistics</a>
-            <a href="./logout.php" class="menu-item logout">Logout</a>
-
-        </nav>
-
-    </aside>
+<?php require_once 'sidebar.php'; ?>
 
 
     <main class="main-content">
@@ -98,6 +81,7 @@
 
 
         <section class="dashboard-section">
+            
 
             <div class="section-header">
 
@@ -111,7 +95,7 @@
 
             <div class="quick-actions">
 
-                <a href="manageUsers.php" class="action-card">
+                <a href="/CareerLink-Online-Job-Portal/controllers/adminControls.php?page=users" class="action-card">
 
                     <h3>Manage Users</h3>
 
@@ -122,7 +106,7 @@
                 </a>
 
 
-                <a href="manageJobs.php" class="action-card">
+                <a href="/CareerLink-Online-Job-Portal/controllers/adminControls.php?page=jobs"class="action-card">
 
                     <h3>Manage Jobs</h3>
 
@@ -133,7 +117,7 @@
                 </a>
 
 
-                <a href="statistics.php" class="action-card">
+                <a href="/CareerLink-Online-Job-Portal/controllers/adminControls.php?page=statistics" class="action-card">
 
                     <h3>View Statistics</h3>
 

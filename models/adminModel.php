@@ -1,5 +1,6 @@
 <?php
 
+// User Management Functions
 function getTotalUsers()
 {
     global $conn;
@@ -55,7 +56,7 @@ function getTotalJobs()
     return $row['total'];
 }
 
-
+// User Management Functions
 function getAllUsers($search = '', $role = '')
 {
     global $conn;
@@ -168,6 +169,199 @@ function getUserById($userId)
 
     return $user;
 }
+
+// Job Management Functions
+function getAllJobs($search = '', $status = '')
+{
+    global $conn;
+
+    if ($search != '' && $status != '') {
+
+        $sql = "SELECT jobs.job_id, jobs.title, jobs.category,
+                       jobs.location, jobs.salary, jobs.deadline,
+                       jobs.status, jobs.posted_date,
+                       employers.company_name
+                FROM jobs
+                INNER JOIN employers
+                ON jobs.employer_id = employers.employer_id
+                WHERE (jobs.title LIKE ? OR employers.company_name LIKE ?)
+                AND jobs.status = ?
+                ORDER BY jobs.job_id DESC";
+
+        $stmt = mysqli_prepare($conn, $sql);
+
+        $searchTerm = "%" . $search . "%";
+
+        mysqli_stmt_bind_param(
+            $stmt,
+            "sss",
+            $searchTerm,
+            $searchTerm,
+            $status
+        );
+
+    } elseif ($search != '') {
+
+        $sql = "SELECT jobs.job_id, jobs.title, jobs.category,
+                       jobs.location, jobs.salary, jobs.deadline,
+                       jobs.status, jobs.posted_date,
+                       employers.company_name
+                FROM jobs
+                INNER JOIN employers
+                ON jobs.employer_id = employers.employer_id
+                WHERE jobs.title LIKE ?
+                   OR employers.company_name LIKE ?
+                ORDER BY jobs.job_id DESC";
+
+        $stmt = mysqli_prepare($conn, $sql);
+
+        $searchTerm = "%" . $search . "%";
+
+        mysqli_stmt_bind_param(
+            $stmt,
+            "ss",
+            $searchTerm,
+            $searchTerm
+        );
+
+    } elseif ($status != '') {
+
+        $sql = "SELECT jobs.job_id, jobs.title, jobs.category,
+                       jobs.location, jobs.salary, jobs.deadline,
+                       jobs.status, jobs.posted_date,
+                       employers.company_name
+                FROM jobs
+                INNER JOIN employers
+                ON jobs.employer_id = employers.employer_id
+                WHERE jobs.status = ?
+                ORDER BY jobs.job_id DESC";
+
+        $stmt = mysqli_prepare($conn, $sql);
+
+        mysqli_stmt_bind_param(
+            $stmt,
+            "s",
+            $status
+        );
+
+    } else {
+
+        $sql = "SELECT jobs.job_id, jobs.title, jobs.category,
+                       jobs.location, jobs.salary, jobs.deadline,
+                       jobs.status, jobs.posted_date,
+                       employers.company_name
+                FROM jobs
+                INNER JOIN employers
+                ON jobs.employer_id = employers.employer_id
+                ORDER BY jobs.job_id DESC";
+
+        $stmt = mysqli_prepare($conn, $sql);
+    }
+
+    mysqli_stmt_execute($stmt);
+
+    $result = mysqli_stmt_get_result($stmt);
+
+    mysqli_stmt_close($stmt);
+
+    return $result;
+}
+
+function updateJobStatus($jobId, $status)
+{
+    global $conn;
+
+    $sql = "UPDATE jobs SET status = ? WHERE job_id = ?";
+
+    $stmt = mysqli_prepare($conn, $sql);
+
+    mysqli_stmt_bind_param($stmt, "si", $status, $jobId);
+
+    $result = mysqli_stmt_execute($stmt);
+
+    mysqli_stmt_close($stmt);
+
+    return $result;
+}
+
+function deleteJob($jobId)
+{
+    global $conn;
+
+    $sql = "DELETE FROM jobs WHERE job_id = ?";
+
+    $stmt = mysqli_prepare($conn, $sql);
+
+    mysqli_stmt_bind_param($stmt, "i", $jobId);
+
+    $result = mysqli_stmt_execute($stmt);
+
+    mysqli_stmt_close($stmt);
+
+    return $result;
+}
+
+// Job Management Functions
+function getJobById($jobId)
+{
+    global $conn;
+
+    $sql = "SELECT jobs.job_id,jobs.title,jobs.description,jobs.category,jobs.location,jobs.salary,jobs.deadline,jobs.status,jobs.posted_date,employers.company_name FROM jobs INNER JOIN employers ON jobs.employer_id = employers.employer_id WHERE jobs.job_id = ?";
+
+    $stmt = mysqli_prepare($conn, $sql);
+
+    mysqli_stmt_bind_param($stmt, "i", $jobId);
+
+    mysqli_stmt_execute($stmt);
+
+    $result = mysqli_stmt_get_result($stmt);
+
+    $job = mysqli_fetch_assoc($result);
+
+    mysqli_stmt_close($stmt);
+
+    return $job;
+}
+
+function getTotalApplications()
+{
+    global $conn;
+
+    $sql = "SELECT COUNT(*) AS total FROM applications";
+
+    $result = mysqli_query($conn, $sql);
+
+    $row = mysqli_fetch_assoc($result);
+
+    return $row['total'];
+}
+
+function getJobStatusStatistics()
+{
+    global $conn;
+
+    $sql = "SELECT status, COUNT(*) AS total
+            FROM jobs
+            GROUP BY status";
+
+    $result = mysqli_query($conn, $sql);
+
+    return $result;
+}
+
+function getApplicationStatusStatistics()
+{
+    global $conn;
+
+    $sql = "SELECT status, COUNT(*) AS total
+            FROM applications
+            GROUP BY status";
+
+    $result = mysqli_query($conn, $sql);
+
+    return $result;
+}
+
 
 
 ?>

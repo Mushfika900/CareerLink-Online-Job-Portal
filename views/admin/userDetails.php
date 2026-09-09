@@ -15,6 +15,8 @@
 
 <body>
 
+    <?php require_once 'sidebar.php'; ?>
+
     <main class="main-content">
 
         <header class="topbar">
@@ -27,52 +29,121 @@
         </header>
 
 
-        <section class="dashboard-section">
-
-            <div class="section-header">
-
-                <h2><?php echo htmlspecialchars($user['name']); ?></h2>
-
-                <p>User ID: <?php echo $user['user_id']; ?></p>
-
-            </div>
+        <a href="/CareerLink-Online-Job-Portal/controllers/adminControls.php?page=users"
+           class="back-button">
+            ← Back to Manage Users
+        </a>
 
 
-            <div class="user-details">
+        <?php if ($user) { ?>
 
-                <p>
-                    <strong>Name:</strong>
-                    <?php echo htmlspecialchars($user['name']); ?>
-                </p>
+            <section class="user-details-layout">
 
-                <p>
-                    <strong>Email:</strong>
-                    <?php echo htmlspecialchars($user['email']); ?>
-                </p>
+                <div class="user-information">
 
-                <p>
-                    <strong>Phone:</strong>
-                    <?php echo htmlspecialchars($user['phone']); ?>
-                </p>
+                    <div class="detail-field">
+                        <label>Name</label>
+                        <div class="detail-box">
+                            <?php echo htmlspecialchars($user['name']); ?>
+                        </div>
+                    </div>
 
-                <p>
-                    <strong>Role:</strong>
-                    <?php echo htmlspecialchars($user['role']); ?>
-                </p>
 
-                <p>
-                    <strong>Status:</strong>
-                    <?php echo htmlspecialchars($user['status']); ?>
-                </p>
+                    <div class="detail-field">
+                        <label>Email</label>
+                        <div class="detail-box">
+                            <?php echo htmlspecialchars($user['email']); ?>
+                        </div>
+                    </div>
 
-                <p>
-                    <strong>Created At:</strong>
-                    <?php echo htmlspecialchars($user['created_at']); ?>
-                </p>
 
-            </div>
+                    <div class="detail-field">
+                        <label>Phone</label>
+                        <div class="detail-box">
+                            <?php echo htmlspecialchars($user['phone']); ?>
+                        </div>
+                    </div>
 
-        </section>
+
+                    <div class="detail-field">
+                        <label>Role</label>
+                        <div class="detail-box">
+
+                            <?php
+                            if ($user['role'] == 'jobseeker') {
+                                echo "Job Seeker";
+                            } elseif ($user['role'] == 'employer') {
+                                echo "Employer";
+                            } else {
+                                echo "Admin";
+                            }
+                            ?>
+
+                        </div>
+                    </div>
+
+
+                    <div class="detail-field">
+                        <label>Account Status</label>
+                        <div class="detail-box">
+                            <?php echo ucfirst($user['status']); ?>
+                        </div>
+                    </div>
+
+
+                    <div class="detail-field">
+                        <label>Registration Date</label>
+                        <div class="detail-box">
+                            <?php echo date("M d, Y", strtotime($user['created_at'])); ?>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="admin-actions">
+
+                    <h3>Admin Actions</h3>
+
+
+                    <?php if ($user['status'] == 'active') { ?>
+
+                        <a
+                            href="/CareerLink-Online-Job-Portal/controllers/adminControls.php?page=users&action=status&id=<?php echo $user['user_id']; ?>&status=inactive"
+                            class="action-button full-button">
+                            Deactivate User
+                        </a>
+
+                    <?php } else { ?>
+
+                        <a
+                            href="/CareerLink-Online-Job-Portal/controllers/adminControls.php?page=users&action=status&id=<?php echo $user['user_id']; ?>&status=active"
+                            class="action-button full-button">
+                            Activate User
+                        </a>
+
+                    <?php } ?>
+
+
+                    <a
+                        href="/CareerLink-Online-Job-Portal/controllers/adminControls.php?page=users&action=delete&id=<?php echo $user['user_id']; ?>"
+                        class="delete-button full-button">
+                        Delete User
+                    </a>
+
+                </div>
+
+            </section>
+
+        <?php } else { ?>
+
+            <section class="dashboard-section">
+
+                <p>User not found.</p>
+
+            </section>
+
+        <?php } ?>
 
     </main>
 
