@@ -251,6 +251,63 @@ body {
     line-height: 1.5;
 }
 
+.table-container {
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 14px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e5e9e7;
+    font-size: 13px;
+}
+
+.admin-table th {
+    background: #f6f8f7;
+    color: #555;
+    font-weight: 600;
+}
+
+.admin-table td {
+    color: #555;
+}
+
+.admin-table tr:hover {
+    background: #fafcfb;
+}
+
+
+.user-filter {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.user-filter input,
+.user-filter select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.user-filter input {
+    flex: 1;
+}
+
+.user-filter button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
 
 
 @media (max-width: 1000px) {
