@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $phone=$_POST['phone'];
     $password=$_POST['password'];
     $role=$_POST['role'];
-    if(checkEmail($email)){
+    if(checkEmail($email) ){
         echo "email already exists";
         exit();
     }

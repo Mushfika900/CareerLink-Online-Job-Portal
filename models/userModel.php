@@ -24,6 +24,14 @@ function checkEmail($email){
 
     return mysqli_num_rows($result)>0;
 }
+// function checkPhone($phone){
+//     global $conn;
+
+//     $sql="SELECT * FROM users WHERE phone='$phone'";
+//     $result=mysqli_query($conn,$sql);
+
+//     return mysqli_num_rows($result)>0;
+// }
 
 function registerUser($name,$email,$phone,$password,$role){
     global $conn;
@@ -31,5 +39,15 @@ function registerUser($name,$email,$phone,$password,$role){
     $sql="INSERT INTO users(name,email,phone,password,role)
      VALUES('$name','$email','$phone','$password','$role')";
     return mysqli_query($conn,$sql);
+}
+
+function updatePassword($email,$password){
+    global $conn;
+    
+    $hashedPass=password_hash($password,PASSWORD_DEFAULT);
+    $sql="UPDATE users SET password='$hashedPass' WHERE email='$email'";
+    return mysqli_query($conn,$sql);
+
+    
 }
 ?>
