@@ -39,7 +39,7 @@ body{
     border-radius: 50%;
 }
 .left-text{
-    margin-top: 140px;
+    margin-top: 130px;
 }
 .left-text h1{
     color: white;
@@ -80,14 +80,15 @@ body{
     padding: 50px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .login-form{
-    width: 100%;
+    width: 380px;
     position: relative;
 }
 .login-form h2{
-    font-size: 30px;
-    margin-bottom: 8px;
+    font-size: 32px;
+    margin-bottom: 10px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #1f2a24;
     font-weight: normal;
@@ -108,11 +109,12 @@ body{
 }
 .login-form input{
     width: 100%;
-    height: 42px;
+    height: 45px;
     padding: 0 12px;
     border: 1px solid #dddddd;
     border-radius: 5px;
     margin-bottom: 18px;
+    font-size: 14px;
 }
 #emailError,
 #passError{
@@ -133,7 +135,9 @@ body{
     font-size: 11px;
     color: #777;
     text-decoration: none;
-    float: right;margin-top: 2px;
+    float: right;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 .btn{
     width: 100%;
@@ -163,11 +167,12 @@ background-color: #0f4434;
 .show-btn{
     position: absolute;
     right: 12px;
-    top: 248px;
+    top: 61%;
     border: none;
     background: transparent;
     color: #145440;
     font-size: 11px;
+    font-weight: bold;
     cursor: pointer;
 }
 .login-form .valid{
@@ -199,6 +204,22 @@ background-color: #0f4434;
 }
 .pass-box{
     position: relative;
+}
+.pass-box input{
+    padding-right: 0px;
+    width: 100%;
+}
+.pass-box button{
+    position: absolute;
+    right: 15px;
+    top: 35%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    color: #145440;
+    font-size: 11px;
+    cursor: pointer;
+    font-weight: bold;
 }
 .show-pass{
     position: absolute;
@@ -264,4 +285,27 @@ background-color: #0f4434;
     font-size: 40px;
     font-weight: bold;
     margin-bottom: 20px;
+}
+.account-type{
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+.account-type button{
+    width: 50%;
+    height: 40px;  
+    border-radius: 8px;
+    border:solid 1px #d8ddd9;
+    background: #fff;  
+    color:#777;
+}
+.account-type button.active{
+    background: #e7f2ed;
+    color: #166b57;
+    border:solid 1px #166b57;
+    
+}
+.account-type button.active:hover{
+    background: #166b57;
+    color: #fff;
 }

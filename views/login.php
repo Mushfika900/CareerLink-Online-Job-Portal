@@ -35,17 +35,17 @@
                 <p>
                     Log in to continue to your dashboard.
                 </p>
-                <form method="post" action="../controllers/loginControl.php">
+                <form id="loginForm" method="post" action="../controllers/loginControl.php">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="you@example.com">
-                    <span id="emailError"></span><br>
+                    <span id="emailError" style="color: red;font-size:14px;"></span><br>
                     <label for="pass" class="pass">Password</label>
                     <a href="forgot.php" class="forgot">Forgot Password?</a>
-                    <input type="password" id="pass" name="pass" placeholder="Enter password">
-                    <span id="passError"></span>
+                    <input type="password" id="password" name="password" placeholder="Enter password">
+                    <span id="passError" style="color: red;font-size:14px;"></span>
                     <button type="button" class="show-btn" id="showBtn" onclick="showPassword()">Show</button>
                     
-                    <button  type="submit" class="btn">Log in</button>
+                    <button  type="submit" name="login" class="btn">Log in</button>
                     <p class="create">
                         Now here?
                         <a href="#">Create an account</a>
