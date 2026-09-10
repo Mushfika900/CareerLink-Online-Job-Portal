@@ -1,0 +1,117 @@
+/* Page-specific styles for Job Seeker Dashboard */
+
+.welcome h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 24px;
+    margin: 0 0 5px;
+    font-weight: normal;
+}
+
+.welcome p {
+    margin: 0;
+    color: #718078;
+    font-size: 14px;
+}
+
+.stats {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.stat-box {
+    width: 25%;
+    height: 90px;
+    border: 1px solid #dce3df;
+    border-radius: 10px;
+    padding: 15px 20px;
+}
+
+.number {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 28px;
+    margin-bottom: 4px;
+}
+
+.label {
+    color: #718078;
+    font-size: 13px;
+}
+
+.pending .number { color: #c28b20; }
+.accepted .number { color: #145440; }
+.rejected .number { color: #d94c3e; }
+
+.recent {
+    margin-top: 34px;
+}
+
+.recent-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recent-header h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 17px;
+    margin: 0;
+    font-weight: normal;
+}
+
+.view-btn {
+    background-color: white;
+    border: 1px solid #dce3df;
+    border-radius: 7px;
+    padding: 7px 13px;
+    color: #718078;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+}
+
+th {
+    text-align: left;
+    color: #718078;
+    font-size: 11px;
+    padding: 10px 14px;
+    border-bottom: 1px solid #dce3df;
+}
+
+td {
+    padding: 14px;
+    font-size: 14px;
+    border-bottom: 1px solid #dce3df;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.status {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.accepted-status { color: #27815e; background-color: #e3f3eb; }
+.pending-status  { color: #c38a19; background-color: #fff1d9; }
+.rejected-status { color: #d54c40; background-color: #fde8e5; }
+
+@media (max-width: 800px) {
+    .stats { flex-wrap: wrap; }
+    .stat-box { width: 48%; }
+}
+
+@media (max-width: 600px) {
+    .stat-box { width: 100%; }
+    table { font-size: 12px; }
+    th, td { padding: 8px; }
+}
