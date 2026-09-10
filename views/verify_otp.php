@@ -40,7 +40,7 @@
                     <input type="text" id="otp" name="otp" placeholder="Enter 6-digit OTP" maxlength="6" onkeyup="checkOTP()">
                     <span id="otpError"></span>
                     <p class="otp-time">Expires in 05:00</p>
-                    <button type="submit" class="btn" id="btn">Verify OTP</button>
+                    <button type="submit" class="btn" id="btn" name="verify">Verify OTP</button>
                     <p class="resend-text">Didn't get the code?
                         <a href="#">Resend OTP</a></p>
                         <a href="login.php" class="back-login">

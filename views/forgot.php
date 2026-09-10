@@ -38,15 +38,15 @@
                 </p>
                 <form method="post" action="../controllers/forgotControl.php">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="you@example.com" onkeyup="checkEmail()">
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required onkeyup="checkEmail()">
                     <span id="emailError"></span>
           
-                    <button type="submit" class="btn">Send Verification Code</button>
+                    <button type="submit" name="submit" class="btn">Send Verification Code</button>
                     <a href="login.php" class="back-login">&larr;Back to Login</a>
                 </form>
             </div>
         </div>
     </div>
-    <script src=""></script>
+    <!-- <script src=""></script> -->
 </body>
 </html>
