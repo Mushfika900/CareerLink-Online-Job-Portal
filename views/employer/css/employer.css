@@ -1,0 +1,325 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #fafafa;
+    font-family: Arial, sans-serif;
+    color: #222;
+}
+
+
+/* Header */
+
+#header {
+    height: 65px;
+    background-color: white;
+    border-bottom: 1px solid #dddddd;
+
+    display: flex;
+    align-items: center;
+
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+
+#logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1f604f;
+    width: 30%;
+}
+
+
+#nav {
+    width: 60%;
+    text-align: center;
+}
+
+
+#nav a {
+    text-decoration: none;
+    color: #555555;
+
+    margin-left: 25px;
+    margin-right: 25px;
+
+    font-size: 14px;
+}
+
+
+#nav a:hover {
+    color: #1f604f;
+}
+
+
+#user {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    background-color: #e3f0eb;
+    color: #1f604f;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+}
+
+
+/* Main */
+
+#main {
+    padding: 35px;
+}
+
+
+#main h2 {
+    margin-bottom: 5px;
+}
+
+
+#subtitle {
+    margin-top: 0;
+    color: #777777;
+}
+
+
+/* Cards */
+
+#cards {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+
+.card {
+    background-color: white;
+
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+
+    width: 25%;
+    padding: 20px;
+}
+
+
+.card h2 {
+    margin-top: 0;
+    margin-bottom: 8px;
+
+    color: #1f604f;
+}
+
+
+.card p {
+    margin: 0;
+    color: #777777;
+}
+
+
+/* Recently Posted */
+
+#recentHeader {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 35px;
+}
+
+
+#postButton {
+    text-decoration: none;
+
+    background-color: #1f604f;
+    color: white;
+
+    padding: 9px 15px;
+
+    border-radius: 5px;
+
+    font-size: 13px;
+}
+
+
+#jobBox {
+    background-color: white;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 8px;
+
+    margin-top: 10px;
+}
+
+
+.job {
+    display: flex;
+
+    align-items: center;
+
+    border-bottom: 1px solid #eeeeee;
+
+    padding: 15px;
+}
+
+
+.job:last-child {
+    border-bottom: none;
+}
+
+
+.jobInfo {
+    width: 70%;
+}
+
+
+.jobInfo h4 {
+    margin: 0;
+}
+
+
+.jobInfo p {
+    margin-top: 6px;
+    margin-bottom: 0;
+
+    color: #777777;
+
+    font-size: 13px;
+}
+
+
+.jobStatus {
+    width: 15%;
+
+    color: #1f604f;
+}
+
+
+.job button {
+    border: 1px solid #cccccc;
+
+    background-color: white;
+
+    border-radius: 5px;
+
+    padding: 7px 12px;
+
+    cursor: pointer;
+}
+
+
+#empty {
+    padding: 20px;
+    color: #777777;
+}
+
+
+/* post job er design */
+#postJobBox {
+    width: 700px;
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    padding: 25px;
+}
+
+#postJobBox h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+#postJobBox label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 7px;
+    font-size: 14px;
+}
+
+#postJobBox input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+#postJobBox textarea {
+    width: 100%;
+    height: 90px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    padding: 8px;
+    resize: none;
+}
+
+.formRow {
+    display: flex;
+    gap: 20px;
+}
+
+.formGroup {
+    width: 50%;
+}
+
+#submitJob {
+    margin-top: 20px;
+    background-color: #1f604f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* job holder er css*/
+#myJobsHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#jobsTableBox {
+    margin-top: 25px;
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#jobsTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#jobsTable th {
+    text-align: left;
+    padding: 15px;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #dddddd;
+    font-size: 13px;
+}
+
+#jobsTable td {
+    padding: 15px;
+    border-bottom: 1px solid #eeeeee;
+    font-size: 14px;
+}
+
+#jobsTable tr:last-child td {
+    border-bottom: none;
+}
+
+#jobsTable td a {
+    text-decoration: none;
+    color: #1f604f;
+    margin-right: 12px;
+}
