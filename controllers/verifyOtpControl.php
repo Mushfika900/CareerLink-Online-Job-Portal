@@ -1,15 +1,28 @@
-<?php
+
+ <?php
 session_start();
-if (isset($_POST['verify'])){
+ 
+if(isset($_POST['verify'])){
+ 
     $otp=$_POST['otp'];
-    if($otp==$_SESSION['reset_otp']){
-        header("Location:../views/resetPass.php");
+
+    if(time()-$_SESSION['otp_time']>120){
+        echo "OTP expired";
         exit();
     }
-    else{
-        echo "Invalid otp";
+ 
+    if($otp==$_SESSION['reset_otp']){
+ 
+        header("Location:../views/resetPass.php");
+        exit();
+ 
     }
+    
+    else{
+ 
+        echo "Invalid otp";
+ 
+    }
+ 
 }
-
-
 ?>
