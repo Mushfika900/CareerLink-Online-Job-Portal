@@ -2,13 +2,16 @@
 <html>
 
 <head>
-    <title>Post Job</title>
+
+    <title>Edit Job</title>
 
     <link rel="stylesheet"
           href="../views/employer/css/employer.css">
+
 </head>
 
 <body>
+
 
 <div id="header">
 
@@ -16,15 +19,16 @@
         CareerLink
     </div>
 
+
     <div id="nav">
 
         <a href="employerControls.php?page=dashboard">
             Dashboard
         </a>
 
-       <a href="employerControls.php?page=myJobs">
-    My Jobs
-     </a>
+        <a href="employerControls.php?page=myJobs">
+            My Jobs
+        </a>
 
         <a href="employerControls.php?page=postJob">
             Post Job
@@ -36,18 +40,27 @@
 
     </div>
 
+
     <div id="user">
-        <?php echo substr($employer["name"], 0, 1); ?>
+
+        <?php
+        echo substr($employer["name"], 0, 1);
+        ?>
+
     </div>
 
 </div>
+
 
 
 <div id="main">
 
     <div id="postJobBox">
 
-        <h2>Post a New Job Circular</h2>
+        <h2>
+            Edit Job
+        </h2>
+
 
         <?php
 
@@ -58,40 +71,40 @@
 
         ?>
 
-        <form method="post"
-              action="employerControls.php?page=postJob">
 
-            <label>Job Title</label>
+        <form method="post">
+
+            <label>
+                Job Title
+            </label>
 
             <input type="text"
                    name="title"
-                   placeholder="e.g. Junior PHP Developer"
+                   value="<?php echo $job["title"]; ?>"
                    required>
 
 
-            <label>Description</label>
+
+            <label>
+                Description
+            </label>
 
             <textarea name="description"
-                      placeholder="Describe the role..."
-                      required></textarea>
+                      required><?php echo $job["description"]; ?></textarea>
 
-
-            <label>Requirements</label>
-
-            <textarea name="requirements"
-                      placeholder="Skills, experience needed..."
-                      required></textarea>
 
 
             <div class="formRow">
 
                 <div class="formGroup">
 
-                    <label>Category</label>
+                    <label>
+                        Category
+                    </label>
 
                     <input type="text"
                            name="category"
-                           placeholder="Web Development"
+                           value="<?php echo $job["category"]; ?>"
                            required>
 
                 </div>
@@ -99,27 +112,32 @@
 
                 <div class="formGroup">
 
-                    <label>Location</label>
+                    <label>
+                        Location
+                    </label>
 
                     <input type="text"
                            name="location"
-                           placeholder="Dhaka"
+                           value="<?php echo $job["location"]; ?>"
                            required>
 
                 </div>
 
             </div>
+
 
 
             <div class="formRow">
 
                 <div class="formGroup">
 
-                    <label>Salary Range</label>
+                    <label>
+                        Salary Range
+                    </label>
 
                     <input type="text"
                            name="salary"
-                           placeholder="30,000 - 40,000"
+                           value="<?php echo $job["salary"]; ?>"
                            required>
 
                 </div>
@@ -127,10 +145,13 @@
 
                 <div class="formGroup">
 
-                    <label>Application Deadline</label>
+                    <label>
+                        Application Deadline
+                    </label>
 
                     <input type="date"
                            name="deadline"
+                           value="<?php echo $job["deadline"]; ?>"
                            required>
 
                 </div>
@@ -138,11 +159,12 @@
             </div>
 
 
+
             <button type="submit"
-                    name="postJob"
+                    name="updateJob"
                     id="submitJob">
 
-                Post Job
+                Update Job
 
             </button>
 
@@ -152,5 +174,7 @@
 
 </div>
 
+
 </body>
+
 </html>

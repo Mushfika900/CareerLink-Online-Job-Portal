@@ -3,9 +3,8 @@
 
 <head>
     <title>My Jobs</title>
-
-    <link rel="stylesheet"
-          href="../views/employer/css/employer.css">
+<link rel="stylesheet"
+      href="../views/employer/css/employer.css?v=5">
 </head>
 
 <body>
@@ -30,10 +29,9 @@
             Post Job
         </a>
 
-        <a href="#">
-            Profile
-        </a>
-
+       <a href="employerControls.php?page=profile">
+    Profile
+   </a>
     </div>
 
     <div id="user">
@@ -51,12 +49,9 @@
 
     <div id="myJobsHeader">
 
-        <h2>My Job Postings</h2>
-
-        <a href="employerControls.php?page=postJob"
-           id="postButton">
-            + Post New Job
-        </a>
+        <h2>
+            My Job Postings
+        </h2>
 
     </div>
 
@@ -66,12 +61,19 @@
         <table id="jobsTable">
 
             <tr>
+
                 <th>Title</th>
+
                 <th>Location</th>
+
                 <th>Deadline</th>
+
                 <th>Status</th>
+
                 <th>Applicants</th>
+
                 <th>Actions</th>
+
             </tr>
 
 
@@ -89,31 +91,63 @@
                         <?php echo $job["title"]; ?>
                     </td>
 
+
                     <td>
                         <?php echo $job["location"]; ?>
                     </td>
+
 
                     <td>
                         <?php echo $job["deadline"]; ?>
                     </td>
 
+
                     <td>
                         <?php echo ucfirst($job["status"]); ?>
                     </td>
+
 
                     <td>
                         <?php echo $job["applicants"]; ?>
                     </td>
 
+
                     <td>
 
-                        <a href="#">
-                            Edit
-                        </a>
+                        <div class="jobActions">
 
-                        <a href="#">
-                            Manage
-                        </a>
+                            <a href="employerControls.php?page=editJob&id=<?php echo $job["job_id"]; ?>"
+                               class="jobActionButton">
+
+                                Edit
+
+                            </a>
+
+
+                            <form method="post"
+                                  action="employerControls.php?page=jobAction"
+                                  onsubmit="return confirm('Are you sure you want to delete this job?');">
+
+                                <input type="hidden"
+                                       name="jobId"
+                                       value="<?php echo $job["job_id"]; ?>">
+
+
+                                <input type="hidden"
+                                       name="action"
+                                       value="delete">
+
+
+                                <button type="submit"
+                                        class="jobActionButton deleteAction">
+
+                                    Delete
+
+                                </button>
+
+                            </form>
+
+                        </div>
 
                     </td>
 
@@ -145,4 +179,5 @@
 </div>
 
 </body>
+
 </html>

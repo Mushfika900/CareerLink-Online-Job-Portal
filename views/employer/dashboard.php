@@ -28,9 +28,9 @@
             Post Job
          </a>
 
-        <a href="#">
-            Profile
-        </a>
+        <a href="employerControls.php?page=profile">
+    Profile
+     </a>
     </div>
 
     <div id="user">
