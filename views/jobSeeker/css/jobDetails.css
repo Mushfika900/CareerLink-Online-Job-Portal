@@ -1,0 +1,130 @@
+/* Page-specific styles for Job Details & Apply */
+
+.details-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.back-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #718078;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.back-link:hover { color: #145440; }
+
+.job-details { flex: 1; }
+
+.tag {
+    display: inline-block;
+    background-color: #e3f3eb;
+    color: #145440;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+.job-title-heading {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 24px;
+    margin: 0 0 6px;
+    font-weight: normal;
+}
+
+.job-subinfo {
+    color: #718078;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.section-heading {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+
+.section-text {
+    font-size: 14px;
+    color: #45534d;
+    line-height: 1.6;
+    margin: 0 0 28px;
+}
+
+.apply-box {
+    width: 320px;
+    flex-shrink: 0;
+    border: 1px solid #dce3df;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.apply-heading {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 18px;
+}
+
+.field-label {
+    display: block;
+    font-size: 13px;
+    color: #718078;
+    margin-bottom: 8px;
+}
+
+.file-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #dce3df;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #45534d;
+    background-color: #fbfcfb;
+    margin-bottom: 20px;
+}
+
+.cover-letter {
+    width: 100%;
+    min-height: 90px;
+    padding: 12px 14px;
+    border: 1px solid #dce3df;
+    border-radius: 8px;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #45534d;
+    background-color: #fbfcfb;
+    resize: vertical;
+    margin-bottom: 20px;
+}
+
+.cover-letter::placeholder { color: #a3aea7; }
+
+.submit-btn {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background-color: #145440;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit-btn:hover { background-color: #0e3d2e; }
+
+.apply-meta {
+    margin-top: 18px;
+    font-size: 12px;
+    color: #718078;
+    line-height: 1.7;
+}
+
+@media (max-width: 800px) {
+    .details-layout { flex-direction: column; }
+    .apply-box { width: 100%; }
+}

@@ -1,0 +1,124 @@
+/* Page-specific styles for Browse Jobs */
+
+.search-bar {
+    display: flex;
+    gap: 12px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #dce3df;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #19332d;
+    background-color: #fbfcfb;
+}
+
+.search-input::placeholder { color: #a3aea7; }
+
+.filter-select {
+    padding: 12px 18px;
+    border: 1px solid #dce3df;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #19332d;
+    background-color: white;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.search-btn {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    background-color: #145440;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.search-btn:hover { background-color: #0e3d2e; }
+
+.job-list {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.job-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid #dce3df;
+    border-radius: 12px;
+    padding: 20px 24px;
+    gap: 18px;
+}
+
+.job-marker {
+    width: 20px;
+    border-top: 3px dashed #ead433;
+    flex-shrink: 0;
+}
+
+.job-info { flex: 1; }
+
+.job-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 8px;
+    color: #19332d;
+}
+
+.job-meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 13px;
+    color: #718078;
+    flex-wrap: wrap;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #e3f3eb;
+    color: #145440;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.job-salary {
+    font-size: 14px;
+    color: #19332d;
+}
+
+.view-details {
+    background-color: #e3f3eb;
+    color: #145440;
+    border: none;
+    border-radius: 7px;
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.view-details:hover { background-color: #d3ebdf; }
+
+@media (max-width: 800px) {
+    .search-bar { flex-wrap: wrap; }
+    .search-input { flex-basis: 100%; }
+}
+
+@media (max-width: 600px) {
+    .job-card { flex-wrap: wrap; }
+    .job-marker { display: none; }
+    .view-details { width: 100%; text-align: center; }
+}
