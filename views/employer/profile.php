@@ -41,6 +41,8 @@
         <a href="employerControls.php?page=profile">
             Profile
         </a>
+        <a href="/CareerLink-Online-Job-Portal/views/logout.php">
+        Logout</a>
 
     </div>
 
