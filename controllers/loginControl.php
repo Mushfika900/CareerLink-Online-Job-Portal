@@ -14,6 +14,7 @@ if($user)
 $_SESSION['user_id']=$user['user_id'];
 $_SESSION['name']=$user['name'];
 $_SESSION['role']=$user['role'];
+
 if($user['role']=="admin"){
     header("location:../controllers/adminControls.php?page=dashboard");
 }
@@ -21,7 +22,7 @@ elseif($user['role']=="jobseeker"){
     header("location:../views/jobSeeker/dashboard.php");
 }
 elseif($user['role']=="employer"){
-    header("location:../views/employer/dashboard.php");
+   header("Location:../controllers/employerControls.php?page=dashboard");
 }
 exit();
 }
