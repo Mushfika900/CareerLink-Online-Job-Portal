@@ -19,7 +19,7 @@ if($user['role']=="admin"){
     header("location:../controllers/adminControls.php?page=dashboard");
 }
 elseif($user['role']=="jobseeker"){
-    header("location:../views/jobSeeker/dashboard.php");
+    header("location:../controllers/jobSeekerControls.php?page=dashboard");
 }
 elseif($user['role']=="employer"){
    header("Location:../controllers/employerControls.php?page=dashboard");
