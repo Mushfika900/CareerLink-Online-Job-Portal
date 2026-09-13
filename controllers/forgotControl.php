@@ -11,6 +11,8 @@
         $_SESSION['reset_email']=$email;
         $_SESSION['reset_otp']=$otp;
         $_SESSION['otp_time']=time();
+
+        $_SESSION['otp_type']="reset";
         
     sendOTP($email,$otp);
     header("Location:../views/verify_otp.php");

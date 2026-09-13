@@ -7,7 +7,7 @@
 
     <title>Create Account</title>
 
-    <link rel="stylesheet" href="../views/css/style.css">
+    <link rel="stylesheet" href="../views/css/style.css?v3">
 </head>
 
 <body>
@@ -46,32 +46,61 @@
                 <button type="button" class="btn_employer" data-role="employer">Employer </button>
             </div>
             <form method="post" action="../controllers/registrationControl.php">
-                <input type="hidden" name="role" value="jobseeker">
+                <input type="hidden" name="role" id="role" value="jobseeker">
                 <label>Name</label>
                 <input type="text" name="name" placeholder="Enter your name">
-                <br>
+                <br><span style="color:red;font-size:11px;">
+                <?php
+                if(isset($_GET["nameError"]))
+                {
+                echo $_GET["nameError"];
+                }
+                ?></span><br>
                 <label>Email</label>
                 <input type="email" name="email" placeholder="you@xample.com">
                 <br>
+                <span style="color:red;font-size:11px;">
+                <?php
+                if(isset($_GET["emailError"]))
+                {
+                echo $_GET["emailError"];
+                }
+                ?></span><br>
+ 
                 <label>Phone</label>
                 <input type="text" name="phone" placeholder="01XXXXXXXXX">
-                <br>
+                <br><span style="color:red;font-size:11px;">
+                <?php
+                if(isset($_GET["phoneError"]))
+                {
+                echo $_GET["phoneError"];
+                }
+                ?></span><br>
 
                 <label>Password</label>
                 <div class="pass-box">
                 <input type="password" id="password" name="password" placeholder="Enter password">
-                <button type="button" id="show-pass">Show</button>
+                <button type="button" class="show-pass" id="showPass">Show</button>
                 </div>
+                <span style="color:red;font-size:11px;">
+                
+                <?php
+                if(isset($_GET["passError"]))
+                {
+                echo $_GET["passError"];
+                }
+                ?></span><br>
 
                 <button type="submit" class="btn">Create Account</button>
                 <p class="create">Already have an account?
                     <a href="login.php">Login</a>
                 </p>
+    
+
 
             </form>
         </div>
     </div>
-     <script src="../views/js/registration.js"></script>
-
+            <script src="../views/js/registration.js?v3"></script>
 </body>
 </html>
