@@ -1,0 +1,130 @@
+/* Page-specific styles for Profile */
+
+.back-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #718078;
+    font-size: 13px;
+    margin-bottom: 24px;
+}
+
+.back-link:hover { color: #145440; }
+
+.profile-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.profile-form { flex: 1; }
+
+.field-group { margin-bottom: 20px; }
+
+.field-label {
+    display: block;
+    font-size: 13px;
+    color: #718078;
+    margin-bottom: 8px;
+}
+
+.field-input,
+.field-textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #dce3df;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #19332d;
+    background-color: #fbfcfb;
+}
+
+.field-input::placeholder,
+.field-textarea::placeholder { color: #a3aea7; }
+
+.field-textarea {
+    resize: vertical;
+    min-height: 70px;
+}
+
+.save-btn {
+    padding: 13px 26px;
+    border: none;
+    border-radius: 8px;
+    background-color: #145440;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.save-btn:hover { background-color: #0e3d2e; }
+
+.side-box {
+    width: 320px;
+    flex-shrink: 0;
+    border: 1px solid #dce3df;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.side-heading {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 0 6px;
+}
+
+.side-text {
+    font-size: 13px;
+    color: #718078;
+    margin: 0 0 14px;
+}
+
+.file-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #dce3df;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #45534d;
+    background-color: #fbfcfb;
+    margin-bottom: 10px;
+}
+
+.side-btn {
+    padding: 9px 16px;
+    border: none;
+    border-radius: 7px;
+    background-color: #e3f3eb;
+    color: #145440;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.side-btn:hover { background-color: #d3ebdf; }
+
+.danger-heading {
+    color: #d54c40;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 26px 0 6px;
+}
+
+.delete-btn {
+    padding: 9px 16px;
+    border: none;
+    border-radius: 7px;
+    background-color: #fde8e5;
+    color: #d54c40;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.delete-btn:hover { background-color: #fad7d2; }
+
+@media (max-width: 800px) {
+    .profile-layout { flex-direction: column; }
+    .side-box { width: 100%; }
+}

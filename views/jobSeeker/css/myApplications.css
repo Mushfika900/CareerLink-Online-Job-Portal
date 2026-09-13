@@ -1,0 +1,50 @@
+/* Page-specific styles for My Applications */
+
+.page-title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 22px;
+    margin: 0 0 25px;
+    font-weight: normal;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    color: #718078;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    padding: 10px 14px;
+    border-bottom: 1px solid #dce3df;
+}
+
+td {
+    padding: 16px 14px;
+    font-size: 14px;
+    border-bottom: 1px solid #dce3df;
+    color: #19332d;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.status {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.accepted-status { color: #27815e; background-color: #e3f3eb; }
+.pending-status  { color: #c38a19; background-color: #fff1d9; }
+.rejected-status { color: #d54c40; background-color: #fde8e5; }
+
+@media (max-width: 600px) {
+    table { font-size: 12px; }
+    th, td { padding: 8px; }
+}

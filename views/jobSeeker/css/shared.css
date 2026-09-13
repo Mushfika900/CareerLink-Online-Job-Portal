@@ -1,0 +1,96 @@
+/* Shared base styles for all Job Seeker pages */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: #f5f7f5;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #19332d;
+}
+
+.container {
+    width: 95%;
+    max-width: 1100px;
+    margin: 20px auto;
+    background-color: white;
+    border: 1px solid #dce3df;
+    border-radius: 10px;
+    min-height: 530px;
+}
+
+.navbar {
+    height: 62px;
+    border-bottom: 1px solid #dce3df;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #145440;
+}
+
+.logo-circle {
+    width: 10px;
+    height: 10px;
+    border: 2px solid #d6b94b;
+    border-radius: 50%;
+}
+
+.nav-links {
+    display: flex;
+    gap: 45px;
+    margin-left: auto;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #718078;
+    font-size: 14px;
+    padding: 8px 14px;
+    border-radius: 7px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover { background-color: #edf3f0; color: #145440; }
+.nav-links a.active { color: #19332d; font-weight: bold; }
+
+.profile {
+    margin-left: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #edf3f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: #145440;
+}
+
+.user-name { font-size: 14px; color: #19332d; }
+
+.main { padding: 34px 32px; }
+
+@media (max-width: 800px) {
+    .nav-links { gap: 15px; }
+}
+
+@media (max-width: 600px) {
+    .navbar { padding: 10px 15px; height: auto; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .nav-links { gap: 10px; font-size: 12px; margin-left: 0; }
+    .profile { margin-left: 0; }
+    .main { padding: 25px 15px; }
+    .container { width: 98%; }
+}
