@@ -140,9 +140,10 @@
 
                 <div>
 
-                    <button type="button">
-                        Manage
-                    </button>
+                  <a href="employerControls.php?page=applicants&id=<?php echo $job["job_id"]; ?>" class="manageButton">
+   
+                  Manage
+               </a>
 
                 </div>
 
