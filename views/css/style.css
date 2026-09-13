@@ -9,7 +9,7 @@ body{
 }
 .login-container{
     width: 1100px;
-    height: 600px;
+    height: auto;
     margin: 50px auto;
     display: flex;
     background: white;
@@ -39,7 +39,7 @@ body{
     border-radius: 50%;
 }
 .left-text{
-    margin-top: 140px;
+    margin-top: 130px;
 }
 .left-text h1{
     color: white;
@@ -79,15 +79,15 @@ body{
     background: white;
     padding: 50px;
     display: flex;
-    align-items: center;
+    justify-content: center;
 }
 .login-form{
-    width: 100%;
+    width: 380px;
     position: relative;
 }
 .login-form h2{
-    font-size: 30px;
-    margin-bottom: 8px;
+    font-size: 32px;
+    margin-bottom: 10px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #1f2a24;
     font-weight: normal;
@@ -104,22 +104,17 @@ body{
     display: block;
     font-size: 12px;
     color: #777;
-    margin-bottom: 7px;
+    margin-bottom: 12px;
+    margin-top:4px;
 }
 .login-form input{
     width: 100%;
-    height: 42px;
+    height: 45px;
     padding: 0 12px;
     border: 1px solid #dddddd;
     border-radius: 5px;
     margin-bottom: 18px;
-}
-#emailError,
-#passError{
-    display: block;
-    font-size: 12px;
-    margin-top: 5px;
-    margin-bottom: 10px;
+    font-size: 14px;
 }
 
 .pass{
@@ -133,7 +128,9 @@ body{
     font-size: 11px;
     color: #777;
     text-decoration: none;
-    float: right;margin-top: 2px;
+    float: right;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 .btn{
     width: 100%;
@@ -151,23 +148,25 @@ background-color: #0f4434;
 
 }
 .create{
-    margin-top: 16px;
+    margin: 6px 0 0;
     font-size: 12px;
-    color:#888
+    color:#888;
+    text-align:center;
 }
 .create a{
     color:#145440;
     text-decoration: none;
-    font-weight: bold;
-}
+    font-weight: bold;}
+    
 .show-btn{
     position: absolute;
     right: 12px;
-    top: 248px;
+    top: 61%;
     border: none;
     background: transparent;
     color: #145440;
     font-size: 11px;
+    font-weight: bold;
     cursor: pointer;
 }
 .login-form .valid{
@@ -200,12 +199,21 @@ background-color: #0f4434;
 .pass-box{
     position: relative;
 }
+.pass-box input{
+    padding-right: 60px;
+    width: 100%;
+}
 .show-pass{
     position: absolute;
-    right: 10px;
-    top: 18px;
+    right: 15px;
+    top: 35%;
+    transform: translateY(-50%);
     border: none;
     background: none;
+    color: #145440;
+    font-size: 11px;
+    cursor: pointer;
+    font-weight: bold;
 }
 .pass-text{
     margin-top: 10px;
@@ -218,4 +226,73 @@ background-color: #0f4434;
     margin-top: 12px;
     text-decoration: none;
     color: #17644d;
+}
+
+.success{
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    padding: 10px 20px;
+    background: #145440;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    
+
+}
+.success:hover{
+    background: #095c53;
+}
+.success-content{
+    width: 300px;
+}
+.success-content h2{
+    font-size: 28px;
+    margin-bottom: 15px;
+    line-height: 1.1;
+}
+.success-content p{
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+.success-icon{
+    width:70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #e8f5ef;
+    color: #176b55;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.account-type{
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+.account-type button{
+    width: 50%;
+    height: 40px;  
+    border-radius: 8px;
+    border:solid 1px #d8ddd9;
+    background: #fff;  
+    color:#777;
+}
+.account-type button.active{
+    background: #e7f2ed;
+    color: #166b57;
+    border:solid 1px #166b57;
+    
+}
+.account-type button.active:hover{
+    background: #166b57;
+    color: #fff;
 }
