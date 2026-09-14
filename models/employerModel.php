@@ -387,4 +387,38 @@ function getEmployerIdByUserId($userId)
     return false;
 }
 
+function getJobApplicants($jobId, $employerId)
+{
+    global $conn;
+ 
+    $jobId = (int)$jobId;
+ 
+    $employerId = (int)$employerId;
+ 
+    $sql = "SELECT applications.application_id,
+                   applications.applied_date,
+                   applications.status,
+                   jobseekers.resume_file,
+                   users.name
+ 
+            FROM applications
+ 
+            JOIN jobs
+            ON applications.job_id = jobs.job_id
+ 
+            JOIN jobseekers
+            ON applications.seeker_id = jobseekers.seeker_id
+ 
+            JOIN users
+            ON jobseekers.user_id = users.user_id
+ 
+            WHERE applications.job_id = $jobId
+ 
+            AND jobs.employer_id = $employerId
+ 
+            ORDER BY applications.applied_date DESC";
+ 
+    return mysqli_query($conn, $sql);
+}
+
 ?>
