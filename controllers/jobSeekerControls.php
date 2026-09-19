@@ -5,8 +5,6 @@ session_start();
 require_once "../config/dbConnect.php";
 require_once "../models/jobSeekerModel.php";
 
-/* Every jobseeker page needs a logged-in jobseeker.
-   Checked once here instead of in every view. */
 if (!isset($_SESSION["user_id"]) || $_SESSION["role"] !== "jobseeker") {
     header("Location: ../views/login.php");
     exit();

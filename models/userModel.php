@@ -35,7 +35,7 @@ function registerUser($name,$email,$phone,$password,$role){
         $user_id=mysqli_insert_id($conn);
         if($role=="jobseeker"){
             $sql1="INSERT INTO jobseekers(user_id,resume_file,skills,education,experience) 
-            VALUES ('$user_id',NULL,NULL,NULL,NULL)";
+            VALUES ('$user_id','','','','')";
             mysqli_query($conn,$sql1);
  
         }

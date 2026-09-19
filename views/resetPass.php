@@ -37,7 +37,7 @@
                     <label for="newPass">New Password</label>
                     <div class="pass-box">
                     <input type="password" id="newPass" name="newPass" placeholder="Enter New Password">
-                    <button type="button" class="show-pass" onclick="showNewPassword()">Show</button>
+                    <button type="button" class="show-pass" id="new-pass" onclick="showNewPassword()">Show</button>
                     </div>
 
                     <span id="newPassError"></span>
@@ -45,7 +45,7 @@
                     <label for="confirmPass">Confirm Password</label>
                     <div class="pass-box">
                     <input type="password" id="confirmPass" name="confirmPass" placeholder="Confirm new password">
-                    <button type="button" class="show-pass" onclick="showConfirmPassword()">Show</button>
+                    <button type="button" class="show-pass" id="confirm-pass" onclick="showConfirmPassword()">Show</button>
                     </div>
 
                     <span id="confirmPassError"></span>
@@ -58,6 +58,6 @@
             </div>
          </div>
     </div>
-<script src="../views/js/resetPass.js"></script>
+<script src="../views/js/login.js?v3"></script>
 </body>
 </html>
